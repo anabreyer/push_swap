@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-static void psuh_all_save_three(t_stack **stack_a, t_stack **stack_b)
+static void push_all_save_three(t_stack **stack_a, t_stack **stack_b)
 {
     int stack_size;
     int pushed;
@@ -8,7 +8,7 @@ static void psuh_all_save_three(t_stack **stack_a, t_stack **stack_b)
 
     stack_size = get_stack_size(*stack_a);
     pushed = 0;
-    int i;
+	i = 0;
     while (stack_size > 6 && i <stack_size && pushed < stack_size / 2)
     {
         if ((*stack_a)->index <= stack_size / 2)

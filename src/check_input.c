@@ -1,17 +1,17 @@
 #include "push_swap.h"
 
-static int arg_is_number(char *av)
+static int	arg_is_number(char *av)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if(is_sign(av[i]) && av[i +1] != '\0')
-        i++;
-    while (av[i] && is_digit(av[i]))
-        i++;
-    if (av[i] != '/0' && !is_digit(av[i]))
-        return (0);
-    return (1);
+	i = 0;
+	if (is_sign(av[i]) && av[i + 1] != '\0')
+		i++;
+	while (av[i] && is_digit(av[i]))
+		i++;
+	if (av[i] != '\0' && !is_digit(av[i]))
+		return (0);
+	return (1);
 }
 
 static int have_duplicate(char ** av)
@@ -20,7 +20,7 @@ static int have_duplicate(char ** av)
     int j;
 
     i = 1;
-    while (av[j])
+    while (av[i])
     {
         j = 1;
         while (av[j])
@@ -64,7 +64,7 @@ int	is_correct_input(char **av)
 	}
 	if (nb_zeros > 1)
 		return (0);
-	if (have_duplicates(av))
+	if (have_duplicate(av))
 		return (0);
 	return (1);
 }

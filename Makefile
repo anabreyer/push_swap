@@ -7,12 +7,11 @@ OBJ_PATH = obj/
 
 SRC		= main.c \
 		check_input.c input_utils.c \
-		initialization.c \
 		stack.c \
 		swap.c push.c rotate.c reverse_rotate.c \
 		sort_three.c sort.c \
-		position.c cost.c do_move.c \
-		utils.c
+		position.c cost.c move.c \
+		utils.c initialization.c
 		
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
