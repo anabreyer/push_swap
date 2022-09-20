@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaduan-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/20 16:18:52 by aaduan-b          #+#    #+#             */
+/*   Updated: 2022/09/20 16:19:25 by aaduan-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static void	do_rev_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
+static void	do_rev_rotate_both(t_stack **a, t_stack **b,
+				int *cost_a, int *cost_b)
 {
 	while (*cost_a < 0 && *cost_b < 0)
 	{

@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   position.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaduan-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/20 16:05:38 by aaduan-b          #+#    #+#             */
+/*   Updated: 2022/09/20 16:06:31 by aaduan-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static void get_position(t_stack **stack)
+static void	get_position(t_stack **stack)
 {
-    t_stack *tmp;
-    int i;
+	t_stack	*tmp;
+	int		i;
 
-    tmp = *stack;
-    i = 0;
-    while (tmp)
+	tmp = *stack;
+	i = 0;
+	while (tmp)
 	{
 		tmp->pos = i;
 		tmp = tmp->next;
@@ -37,11 +49,12 @@ int	get_lowest_index_position(t_stack **stack)
 	return (lowest_pos);
 }
 
-static int get_target(t_stack **a, int b_index, int target_index, int target_position)
+static int	get_target(t_stack **a, int b_index,
+				int target_index, int target_position)
 {
-    t_stack *tmp_a;
+	t_stack	*tmp_a;
 
-    	tmp_a = *a;
+	tmp_a = *a;
 	while (tmp_a)
 	{
 		if (tmp_a->index > b_index && tmp_a->index < target_index)

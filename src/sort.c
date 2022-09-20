@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaduan-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/20 16:08:05 by aaduan-b          #+#    #+#             */
+/*   Updated: 2022/09/20 16:09:32 by aaduan-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static void push_all_save_three(t_stack **stack_a, t_stack **stack_b)
+static void	push_all_save_three(t_stack **stack_a, t_stack **stack_b)
 {
-    int stack_size;
-    int pushed;
-    int i;
+	int	stack_size;
+	int	pushed;
+	int	i;
 
-    stack_size = get_stack_size(*stack_a);
-    pushed = 0;
+	stack_size = get_stack_size(*stack_a);
+	pushed = 0;
 	i = 0;
-    while (stack_size > 6 && i <stack_size && pushed < stack_size / 2)
-    {
-        if ((*stack_a)->index <= stack_size / 2)
+	while (stack_size > 6 && i < stack_size && pushed < stack_size / 2)
+	{
+		if ((*stack_a)->index <= stack_size / 2)
 		{
 			do_pb(stack_a, stack_b);
 			pushed++;
@@ -19,17 +31,17 @@ static void push_all_save_three(t_stack **stack_a, t_stack **stack_b)
 		else
 			do_ra(stack_a);
 		i++;
-    }
-    while (stack_size - pushed > 3)
+	}
+	while (stack_size - pushed > 3)
 	{
 		do_pb(stack_a, stack_b);
 		pushed++;
 	}
 }
 
-static void shift_stack(t_stack ** stack_a)
+static void	shift_stack(t_stack **stack_a)
 {
-    int	lowest_pos;
+	int	lowest_pos;
 	int	stack_size;
 
 	stack_size = get_stack_size(*stack_a);
@@ -52,9 +64,9 @@ static void shift_stack(t_stack ** stack_a)
 	}
 }
 
-void sort(t_stack **stack_a, t_stack **stack_b)
+void	sort(t_stack **stack_a, t_stack **stack_b)
 {
-    push_all_save_three(stack_a, stack_b);
+	push_all_save_three(stack_a, stack_b);
 	sort_three(stack_a);
 	while (*stack_b)
 	{

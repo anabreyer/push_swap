@@ -1,10 +1,22 @@
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaduan-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/20 16:22:09 by aaduan-b          #+#    #+#             */
+/*   Updated: 2022/09/20 16:24:38 by aaduan-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#define INT_MAX 2147483647
-#define INT_MIN -2147483648
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include <stdlib.h>
+# include <unistd.h>
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 typedef struct s_stack
 {
@@ -17,42 +29,41 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-void    assign_index(t_stack *stack_a, int stack_size);
-t_stack *fill_stack_values(int ac, char **av);
-void	free_stack(t_stack **stack);
-void	exit_error(t_stack **stack_a, t_stack **stack_b);
+void		assign_index(t_stack *stack_a, int stack_size);
+t_stack		*fill_stack_values(int ac, char **av);
+void		free_stack(t_stack **stack);
+void		exit_error(t_stack **stack_a, t_stack **stack_b);
 long int	ft_atoi(const char *str);
-void	ft_putstr(char *str);
-int	nb_abs(int nb);
-void stack_add_bottom(t_stack **stack, t_stack *new);
-int	is_correct_input(char **av);
-void	get_cost(t_stack **stack_a, t_stack **stack_b);
-void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b);
-int	is_digit(char c);
-int	nbstr_cmp(const char *s1, const char *s2);
-int	is_sign(char c);
-int	is_sorted(t_stack *stack);
-void	do_move(t_stack **a, t_stack **b, int cost_a, int cost_b);
-int	get_lowest_index_position(t_stack **stack);
-void	get_target_position(t_stack **a, t_stack **b);
-void	do_pa(t_stack **stack_a, t_stack **stack_b);
-void	do_pb(t_stack **stack_a, t_stack **stack_b);
-void	do_rra(t_stack **stack_a);
-void	do_rrb(t_stack **stack_b);
-void	do_rrr(t_stack **stack_a, t_stack **stack_b);
-void	do_ra(t_stack **stack_a);
-void	do_rb(t_stack **stack_b);
-void	do_rr(t_stack **stack_a, t_stack **stack_b);
-void	do_sa(t_stack **stack_a);
-void	do_sb(t_stack **stack_b);
-void	do_ss(t_stack **stack_a, t_stack **stack_b);
-void	sort_three(t_stack **stack);
-void sort(t_stack **stack_a, t_stack **stack_b);
-t_stack *get_stack_bottom(t_stack *stack);
-t_stack *get_stack_before_bottom(t_stack *stack);
-t_stack *stack_new(int value);
-void stack_add_bottom(t_stack **stack, t_stack *new);
-int get_stack_size(t_stack *stack);
-
+void		ft_putstr(char *str);
+int			nb_abs(int nb);
+void		stack_add_bottom(t_stack **stack, t_stack *new);
+int			is_correct_input(char **av);
+void		get_cost(t_stack **stack_a, t_stack **stack_b);
+void		do_cheapest_move(t_stack **stack_a, t_stack **stack_b);
+int			is_digit(char c);
+int			nbstr_cmp(const char *s1, const char *s2);
+int			is_sign(char c);
+int			is_sorted(t_stack *stack);
+void		do_move(t_stack **a, t_stack **b, int cost_a, int cost_b);
+int			get_lowest_index_position(t_stack **stack);
+void		get_target_position(t_stack **a, t_stack **b);
+void		do_pa(t_stack **stack_a, t_stack **stack_b);
+void		do_pb(t_stack **stack_a, t_stack **stack_b);
+void		do_rra(t_stack **stack_a);
+void		do_rrb(t_stack **stack_b);
+void		do_rrr(t_stack **stack_a, t_stack **stack_b);
+void		do_ra(t_stack **stack_a);
+void		do_rb(t_stack **stack_b);
+void		do_rr(t_stack **stack_a, t_stack **stack_b);
+void		do_sa(t_stack **stack_a);
+void		do_sb(t_stack **stack_b);
+void		do_ss(t_stack **stack_a, t_stack **stack_b);
+void		sort_three(t_stack **stack);
+void		sort(t_stack **stack_a, t_stack **stack_b);
+t_stack		*get_stack_bottom(t_stack *stack);
+t_stack		*get_stack_before_bottom(t_stack *stack);
+t_stack		*stack_new(int value);
+void		stack_add_bottom(t_stack **stack, t_stack *new);
+int			get_stack_size(t_stack *stack);
 
 #endif

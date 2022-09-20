@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_input.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaduan-b <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/20 15:46:56 by aaduan-b          #+#    #+#             */
+/*   Updated: 2022/09/20 15:51:39 by aaduan-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	arg_is_number(char *av)
@@ -14,24 +26,24 @@ static int	arg_is_number(char *av)
 	return (1);
 }
 
-static int have_duplicate(char ** av)
+static int	have_duplicate(char **av)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 1;
-    while (av[i])
-    {
-        j = 1;
-        while (av[j])
-        {
-            if (j != i && nbstr_cmp(av[i], av[j]) == 0)
-                return (1);
-            j++;
-        }
-        i++;
-    }
-    return (0);
+	i = 1;
+	while (av[i])
+	{
+		j = 1;
+		while (av[j])
+		{
+			if (j != i && nbstr_cmp(av[i], av[j]) == 0)
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
 
 static int	arg_is_zero(char *av)
